@@ -1,0 +1,28 @@
+XJTU Online Judge System (http://202.117.21.117)
+
+This is an online judge system for online algorithm contests. The programs submitted by the users
+can be judged parallel on different PCs.
+
+Authors:
+  Kun Chen   cs.kunchen@gmail.com
+
+To build:
+Linux (requires JDK 1.5+, libmysqldev):
+    ./configure
+    make
+    make install
+
+To run (requires mysql):
+    Configure ${prefix}/etc/client_config.ini and ${prefix}/etc/server_config.ini
+
+Start the server deamon:
+    cd ${prefix}/bin
+    ./server
+
+Start the judge deamon
+    cd ${prefix}/bin
+    ./judge
+
+To deploy the web applications (requires Apache, php and mysql):
+    copy web directory to Apache directory and configure config.inc.php
+
