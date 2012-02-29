@@ -1,0 +1,62 @@
+#This script is used to copy test data to judge data dir
+#test data's file name must be *.in,*.out
+#      by chenkun
+#
+#
+#!/bin/bash
+
+data_dir="./"
+targets="/usr/local/xjoj/data/"
+
+if test -n "$1"
+then
+    proId="$1"
+else
+    echo "./install proId [data_dir]"
+    exit 1
+fi
+
+if test -n "$2"
+then
+    data_dir="$2"
+fi
+
+if [ ! -d "$targets" ];
+then
+    echo "$targets is not exists"
+    exit 1
+fi
+
+if test -d "$targets/in/$proId"
+then
+    rm -Rf "$targets/in/$proId"
+fi
+
+if test -d "$targets/out/$proId"
+then
+    rm -Rf "$targets/out/$proId"
+fi
+
+mkdir "$targets/in/$proId"
+mkdir "$targets/out/$proId"
+
+if test -d "$data_dir"
+then
+    count="1"
+    for datain in `ls -S -r $data_dir/*.in`
+    do
+        fn=`basename $datain .in`
+        if test -f "$data_dir/$fn.out"
+        then
+            `cp $data_dir/$fn.in $targets/in/$proId/$count`
+            `cp $data_dir/$fn.out $targets/out/$proId/$count`
+            echo "$count"
+            let "count=count+1"
+        fi
+    done
+else
+    echo "Error data dir $data_dir"
+    exit 1
+
+fi
+

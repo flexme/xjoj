@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DIR=`mktemp -d`
+javac -sourcepath . -d $DIR JudgeResult.java Sandbox.java SandboxClassLoader.java SandboxSecurityManager.java
+javah -classpath $DIR -jni -force Sandbox
+CWD=`pwd`
+cd $DIR
+jar cfe $CWD/JavaSandbox.jar Sandbox *
+rm -rf
+cd $CWD
+
+JAVA_HOME=`which javac`
+while [ -L "$JAVA_HOME" ]; do JAVA_HOME=`readlink $JAVA_HOME`; done
+JAVA_HOME=${JAVA_HOME%/bin/javac}
+
+g++ -Werror -Wno-sign-compare -ansi -O3 -MD -o libsandbox.so -shared -Wl,-soname,libsandbox.so -I../ -I$JAVA_HOME/include -I$JAVA_HOME/include/linux -I../lib  Sandbox.cpp ../lib/libxjoj.a -L/usr/lib -fPIC -lc
+

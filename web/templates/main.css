@@ -1,0 +1,65 @@
+body,div,ul,h1,h2,ol,li,dt,dd,form { margin:0;padding:0; }
+body { text-align:center;margin-top:6px;}
+.cat-head {background:transparent url(images/white-top-bottom.gif) repeat-x scroll 0pt -1px;height:16px;padding:3px;}
+#main-left {float:left;width:150px;}
+#main-left ul {list-style: inside circle;padding-left:5px;padding-top:6px;padding-bottom:6px;}
+#main-left ul li {padding-top:3px;}
+#main-right {float:left;margin-left:10px;width:815px;}
+.st1 {background-color:#F3F8FF;}
+.st0 {background-color:#E0E5EF;}
+.inp {border-color:#F0F5FF;border-style:groove;color:#112255;}
+#banner {text-align:center;border:1px solid #99BBE8;width:980px;margin-left:auto; margin-right:auto;background:transparent url(images/white-top-bottom.gif) repeat-x scroll 0pt -1px;padding-top:5px;padding-bottom:5px;position:relative;height:85px;}
+#bannerimg {position:absolute;top:10px;left:5px;}
+#bannerimg img {margin-left:20px;height:80px;}
+#footer {margin-left:auto;margin-right:auto;width:980px;padding:5px;}
+.rectdiv{border:1px solid #99BBE8;margin-top:10px;}
+.clear{clear:both;}
+a{color:blue;}
+a:hover{color:#000;}
+hr{margin-top:15px;margin-bottom:15px;}
+.error{border: 1px solid rgb(255, 123, 0); padding: 5px; background: rgb(254, 255, 239) none repeat scroll 0% 0%; margin-bottom: 10px;color:red}
+.th{background:url(images/tb.jpg);font-weight:bold;}
+.st0 div,.st1 div{position:relative;}
+.st0 span,.st1 span{position:absolute;display:block;color:red;left:10px;}
+#plist ul{list-style-type:none;}
+#plist ul li{float:left;padding:2px;}
+.rank_star * {
+	background:transparent url(images/star.png) no-repeat scroll 0 0;
+	display:block;
+	height:22px;
+	overflow:hidden;
+	text-indent:-3000px;
+	width:80px;
+}
+.rank5 {
+	background-position: -63px -21px;
+}
+.rank10 {
+	background-position: -63px -3px;
+}
+.rank15 {
+	background-position: -47px -21px;
+}
+.rank20 {
+	background-position: -47px -3px;
+}
+.rank25 {
+	background-position: -31px -21px;
+}
+.rank30 {
+	background-position: -31px -3px;
+}
+.rank35 {
+	background-position: -15px -21px;
+}
+.rank40 {
+	background-position: -15px -3px;
+}
+.rank45 {
+	background-position: 0px -21px;
+}
+.rank50 {
+	background-position: 0px -3px;
+}
+</style>
+
